@@ -1,0 +1,95 @@
+table {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.header-container {
+    padding: 25px 25px 25px 25px;
+}
+
+.mat-column-description {
+    width: 65% !important;
+}
+
+.mat-column-id {
+    width: 7% !important;
+    border-right: rgba(0, 0, 0, 0.37) 1px solid !important;
+    padding: 0 !important;
+}
+
+.mat-column-description[role="cell"] {
+    width: 100% !important;
+    height: 60px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+td {
+    border-bottom: rgba(0, 0, 0, 0.37) 1px solid;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-header-cell {
+    text-align: center !important;
+    border-right: none;
+    border-bottom: rgba(0, 0, 0, 0.37) 1px solid;
+}
+
+.mat-paginator {
+    background-color: white;
+    z-index: 23;
+}
+
+.table-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 4px 0 0 16px;
+}
+
+.table-control-input-search {
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: rgb(224, 224, 224);
+}
+
+.mat-row.hovered {
+    background: rgb(230, 198, 198);
+}
+
+.mat-row.highlighted {
+  background: rgb(253, 152, 152);
+}
+
+.mat-row .mat-cell {
+    cursor: pointer;
+}
+
+.table-control-button button{
+    height: 50%;
+    width: 128px !important;
+    line-height: 0 !important;
+    border:rgba(0, 0, 0, 0.37) 1px solid;
+    margin: 8px 16px 8px;
+}
+.table-generate-excel{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.table-generate-excel button{
+    width: 10%;
+}

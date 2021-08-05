@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add</h1>
+<div class="input-control" [formGroup]="inputControl">
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+    <label *ngIf="inputControl.get('title').invalid"[ngClass] = "'error'"> Title is required. </label>
+  </mat-form-field>
+</div>
+
+<mat-form-field  appearance="fill">
+  <mat-label>Description</mat-label>
+  <textarea matInput formControlName="description"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5">
+          </textarea>
+            <label *ngIf="inputControl.get('description').invalid"[ngClass] = "'error'"> Description is required. </label>
+</mat-form-field>
+
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Number of pages</mat-label>
+      <input type="number" matInput formControlName="pageCount">
+      <label *ngIf="inputControl.get('pageCount').invalid"[ngClass] = "'error'"> Number of pages must be > 0 </label>
+    </mat-form-field>
+  </div>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Date of published</mat-label>
+    <input matInput [matDatepicker]="picker3" formControlName="publishDate">
+    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+    <mat-datepicker #picker3></mat-datepicker>
+    <label *ngIf="inputControl.get('publishDate').invalid"[ngClass] = "'error'"> Date is required. </label>
+  </mat-form-field>
+  
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Close</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="inputControl.value" [disabled]="inputControl.invalid" cdkFocusInitial>Done</button>
+</div>
+</div>
